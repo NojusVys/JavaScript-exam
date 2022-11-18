@@ -13,7 +13,7 @@ būti stilizuota su CSS ir būti responsive;
 
 // const ENDPOINT = "https://api.github.com/users";
 
-document.getElementById("btn").addEventListener("click", (event, ENDPOINT) => {
+document.getElementById("btn").addEventListener("click", (event) => {
     event.preventDefault();
     const vartotojai = fetch("https://api.github.com/users");
     vartotojai

@@ -8,4 +8,28 @@ Pastaba: Sukurta kortelė, kurioje yra informacija apie automobilį (brand), tur
 būti stilizuota su CSS ir būti responsive;
 -------------------------------------------------------------------------- */
 
-const ENDPOINT = 'cars.json';
+// const ENDPOINT = "cars.json";
+const automobiliai = fetch("cars.json");
+automobiliai
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => displayList(data))
+    .catch((e) => console.log(e.message));
+
+function displayList(data) {
+    const container = document.getElementById("output");
+
+    for (let i = 0; i < data.length; i++) {
+        const gamintojas = document.createElement("li");
+        gamintojas.className = "manufacturer";
+        gamintojas.textContent = data[i].brand;
+        container.appendChild(gamintojas);
+        for (let j = 0; j < data[i].models.length; j++) {
+            const modelis = document.createElement("li");
+            modelis.className = "model";
+            modelis.textContent = data[i].models[j];
+            container.appendChild(modelis);
+        }
+    }
+}
