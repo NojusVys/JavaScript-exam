@@ -11,3 +11,5 @@ console.log(a);
 console.log(b);
 console.log(c);
 console.log(d);
+
+//exam ends here... Task 2 broke for unknown reasons and with no idea how to fix it :((
