@@ -9,25 +9,16 @@ budget: number
 Metodas: 
 wasExpensive() - jeigu filmo "budget" yra daugiau nei 100 000 000 mln USD, tada grąžins true, kitu atveju false. 
 ------------------------------------------------------------------------------------------------------ */
-class Calculator {
-    constructor(a, b) {
-        this.a = a;
-        this.b = b;
+class Movie {
+    constructor(title, director, budget) {
+        this.title = title;
+        this.director = director;
+        this.budget = budget;
     }
 
-    sum(a, b) {
-        return this.a + this.b;
-    }
-
-    subtraction(a, b) {
-        return this.a - this.b;
-    }
-
-    multiplication(a, b) {
-        return this.a * this.b;
-    }
-
-    division(a, b) {
-        return this.a / this.b;
+    wasExpensive() {
+        if (this.budget > 100000000) {
+            return true;
+        } else return false;
     }
 }
